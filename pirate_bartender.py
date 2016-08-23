@@ -14,10 +14,23 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
-responses = []
+responses = {}
 
-for key, question in questions:
-    response = imput(questions[question])
-    responses.append(response)
+def type_of_drink():
+    for key in questions:
+        inp = input(questions[key].lower())
+        if inp == "yes" or inp == "y":
+            response = True
+        elif inp == "no" or inp == "n":
+            response = False
+        else:
+            print("You need to say Yes or No")
+        responses[key] = response
+        print(inp)
+    print(responses)
+
+type_of_drink()
+
+def make_drink(x):
+    drink = []
     
-print responses
