@@ -1,3 +1,5 @@
+import random
+
 questions = {
     "strong": "Do ye like yer drinks strong?",
     "salty": "Do ye like it with a salty tang?",
@@ -33,4 +35,11 @@ type_of_drink()
 
 def make_drink(x):
     drink = []
-    
+    for key in ingredients:
+        if x[key] == True:
+            ingredient = random.choice(ingredients[key])
+        elif x[key] == False:
+            ingredient = "Nothing Added"
+        drink.append(ingredient)
+    print(drink)
+make_drink(responses)
