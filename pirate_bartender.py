@@ -37,13 +37,13 @@ if __name__ == '__main__':
     type_of_drink()
     
     def make_drink(x):
-        drink = []
+        drink = ""
         for key in ingredients:
             if x[key] == True:
                 ingredient = random.choice(ingredients[key])
             elif x[key] == False:
-                ingredient = "Nothing Added"
-            drink.append(ingredient)
-        print("Here's your {} {}. It's made with a {} enjoy... Oh and ARRGGGHH, cuz we're pirates I guess.".format(random.choice(adjectives),random.choice(nouns),print(drink)))
+                ingredient = ""
+            drink += ingredient + " "
+        print("Here's your {} {}. It's made with a {}; enjoy... Oh and ARRGGGHH, cuz we're pirates I guess.".format(random.choice(adjectives),random.choice(nouns),drink))
     
     make_drink(responses)
